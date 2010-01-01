@@ -96,11 +96,19 @@
 			if ([lowerCase isEqualToString:@"true"] || [lowerCase isEqualToString:@"t"]) {
 				renew = YES;
 			}
+		} else{
+			NSString *httpKey = [elements objectAtIndex:0];
+			NSString *httpValue = [elements objectAtIndex:1];
+			[self parseHTTPKey:httpKey value:httpValue];
 		}
     }
     
     return [self initWithKey:aKey secret:aSecret session:aSession duration:aDuration
 				  attributes:attrs created:creationDate renewable:renew];
+}			 
+
+-(void)parseHTTPKey:(NSString *)httpKey value:(id)httpValue{
+	
 }
 
 - (id)initWithUserDefaultsUsingServiceProviderName:(const NSString *)provider prefix:(const NSString *)prefix {

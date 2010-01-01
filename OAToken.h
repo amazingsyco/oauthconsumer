@@ -69,4 +69,7 @@
 
 + (void)removeFromUserDefaultsWithServiceProviderName:(const NSString *)provider prefix:(const NSString *)prefix;
 
+//http parsing
+-(BOOL)parseHTTPKey:(NSString *)paramKey value:(id)body;
+
 @end
